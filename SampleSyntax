@@ -1,0 +1,18 @@
+(defsymphony
+ "Copy of Mean Reversion Comparison to Python Code"
+ {:asset-class "EQUITIES", :rebalance-threshold 0.1}
+ (weight-equal
+  [(if
+    (>
+     (current-price "SPY")
+     (moving-average-price "SPY" {:window 200}))
+    [(weight-equal
+      [(if
+        (> (rsi "TQQQ" {:window 10}) 79)
+        [(asset "UVXY" "ProShares Ultra VIX Short-Term Futures ETF")]
+        [(asset "TQQQ" "ProShares UltraPro QQQ")])])]
+    [(weight-equal
+      [(if
+        (> (rsi "TQQQ" {:window 10}) 79)
+        [(asset "SPY" "SPDR S&P 500 ETF Trust")]
+        [(asset "TQQQ" "ProShares UltraPro QQQ")])])])]))
