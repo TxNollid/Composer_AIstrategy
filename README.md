@@ -15,28 +15,28 @@ A collection of algorithmic trading strategies designed for the AI infrastructur
 ### 🎯 Production-Ready Strategies (Use These)
 
 **Primary Strategy:**
-- `ai_momentum_bull_fixed.clj` - **Winner on all metrics** (44% return, 1.77 Calmar)
+- `ai_momentum_bull_v1.0.clj` - **Winner on all metrics** (44% return, 1.77 Calmar)
   - Simple 5-sector equal weight allocation
   - 200-day MA triggers only (avoids whipsaw)
   - Tactical leverage when RSI > 55
   - Best for trending markets
 
 **Alternative Strategy:**
-- `ai_relative_strength_fixed.clj` - Strong performer (41% return, 1.55 Calmar)
+- `ai_relative_strength_v1.0.clj` - Strong performer (41% return, 1.55 Calmar)
   - Always 100% invested in bull markets
   - Sector rotation based on relative strength
   - Perfect for "Liberation Day" scenarios (tech leadership)
   - Best for rotating markets
 
 **Defensive Strategy:**
-- `ai_stack_defensive_fixed.clj` - Maximum drawdown protection
+- `ai_stack_defensive_v1.0.clj` - Maximum drawdown protection
   - Multi-timeframe filters (50-day & 200-day MA)
   - Volatility spike detection
   - Quick to cash during uncertainty
   - Best for risk-averse investors
 
 **Conservative Alternative:**
-- `ai_buy_hold_winners_fixed.clj` - NVDA concentration (50%+ allocation)
+- `ai_buy_hold_winners_v1.0.clj` - NVDA concentration (50%+ allocation)
   - Buy and hold AI winners
   - Only exits when both SPY and QQQ < 200-day MA
   - Maximum AI exposure
@@ -55,18 +55,17 @@ A collection of algorithmic trading strategies designed for the AI infrastructur
 - `SampleSyntax` - Example Composer symphony syntax
 - `Instructions.md` - Setup instructions (empty template)
 
-### ⚠️ Deprecated Files (Don't Use - Syntax Errors)
+### 🗂️ Deprecated Strategies Folder
 
-- `ai_stack_defensive.clj` - Uses unsupported `(and ...)` operator
-- `ai_momentum_bull.clj` - Uses unsupported `(weight ...)` function
-- `ai_relative_strength.clj` - Syntax errors
-- `ai_buy_hold_winners.clj` - Syntax errors
-- `ai_stack_strategy.clj` - Original strategy (too defensive)
-- `ai_stack_trend_cash.clj` - Original strategy (too defensive)
+All deprecated/broken strategies have been moved to `deprecated_strategies/`:
+- Contains 6 strategy files with syntax errors
+- Includes detailed README explaining what's wrong
+- **DO NOT USE** - Use v1.0 versions instead
+- Kept for historical reference only
 
 ## 🚀 Quick Start
 
-1. **Choose a strategy** (recommended: `ai_momentum_bull_fixed.clj`)
+1. **Choose a strategy** (recommended: `ai_momentum_bull_v1.0.clj`)
 2. **Copy the file contents**
 3. **Paste into Composer** symphony editor
 4. **Backtest** against your preferred timeframe
